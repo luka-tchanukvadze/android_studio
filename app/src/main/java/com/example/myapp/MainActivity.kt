@@ -9,12 +9,14 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 //import com.google.firebase.iid.internal.FirebaseInstanceIdInternal
-import com.google.firebase.iid.FirebaseInstanceId
+//import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+
 
 const val TOPIC = "/topics/myTopic2"
 
@@ -26,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         FirebaseService.sharedPref = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
-//        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
-//            FirebaseService.token = it.token
-//            etToken.setText(it.token)
-//        }
+        FirebaseMessaging.getInstance().token.addOnSuccessListener {
+            FirebaseService.token = it
+            findViewById<EditText>(R.id.etToken).setText(it)
+        }
 
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
 
