@@ -16,7 +16,8 @@ import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
+//import kotlinx.android.synthetic.main.activity_main.*
+//es aklia
 
 const val TOPIC = "/topics/myTopic2"
 

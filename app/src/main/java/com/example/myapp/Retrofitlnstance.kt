@@ -3,7 +3,7 @@ package com.example.myapp
 import com.example.myapp.constants.Companion.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
+//import retrofit2.create
 
 class RetrofitInstance {
 
