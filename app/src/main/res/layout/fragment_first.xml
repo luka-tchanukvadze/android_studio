@@ -1,18 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textColor="#045595"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:background="@drawable/main_background"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="FIRST fragment" />
+        android:background="@drawable/layout_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="170dp"
+        >
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imageid"
+            android:layout_width="67dp"
+            android:layout_height="59dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/title"
+            app:srcCompat="@drawable/icons8_messages_50" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Enter text"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="7dp"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:hint="Enter Title"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="#B1B0B0" />
+
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginVertical="6dp"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:hint="Enter message"
+            android:inputType="textPersonName"
+            android:minHeight="100dp"
+            android:paddingHorizontal="4dp"
+            android:paddingBottom="65dp"
+            android:textColor="@color/white"
+            android:textColorHint="#B1B0B0" />
+
+        <EditText
+            android:id="@+id/etToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:hint="Enter Token"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/white"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
